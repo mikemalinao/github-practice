@@ -1,0 +1,108 @@
+A. Write a program that, given three integers, returns the smallest value.
+import java.util.*;
+public class TuneUpAssignment {
+	public static void main (String[] args){
+	Scanner con = new Scanner(System.in);
+	int first;
+	int second;
+	int third;
+
+	try {	
+		System.out.print("Enter first number: ");
+		first = con.nextInt();
+		System.out.print("Enter second number: ");
+		second = con.nextInt();
+		System.out.print("Enter first number: ");
+		third = con.nextInt();
+
+		if(first < second && first < third){
+			System.out.print("The smallest number is " + first);
+		} else if(second < first && second < third){
+			System.out.print("The smallest number is " + second);
+		} else {
+			System.out.print("The smallest number is " + third);
+		}
+	} catch (RuntimeException ex){
+		System.out.println("Error! Please input an integer!");
+		}
+       }
+} 
+
+
+B. Write a program that given an integer between 0 and 6, prints the corresponding day of the week. Assume that the first day of the week (0) is Sunday.
+import java.util.*;
+public class TuneUpAssignment {
+	public static void main (String[] args){
+	Scanner con = new Scanner(System.in);
+	int day;
+	try {	
+		System.out.print("Enter an integer: ");
+		day = con.nextInt();
+
+		switch (day) {
+		case 0: System.out.print("Sunday");
+			break;
+		case 1: System.out.print("Monday");
+			break;
+		case 2: System.out.print("Tuesday");
+			break;
+		case 3: System.out.print("Wednesday");
+			break;
+		case 4: System.out.print("Thursday");
+			break;
+		case 5: System.out.print("Friday");
+			break;
+		case 6: System.out.print("Saturday");
+			break;
+		default: System.out.print("Invalid input! Please enter a value from 0-6");
+			break;
+			}
+		} catch (RuntimeException ex){
+			System.out.println("Error! Please input an integer!");
+		}
+	}
+}
+
+C. Write a program that given the type of vehicle (c for car, b for bus, t for truck) and the hours a vehicle spent in the parking lot, returns the parking charge based on the rates shown below:
+car - PHP20.00 per hr 
+bus - PHP35.00 per hr
+truck- PHP50.00 per hr
+
+import java.util.*;
+public class TuneUpAssignment {
+	public static void main (String[] args){
+	Scanner con = new Scanner(System.in);
+	char vehicleType;
+	double carRate = 20.00;
+	double busRate = 35.00;
+	double truckRate = 50.00;
+	double hours;
+	double total;
+		//C for car, B for bus, T for truck
+			System.out.print("Enter vehicle type: ");
+			vehicleType = con.next().toLowerCase().charAt(0);	
+			System.out.print("Parking duration(hour/s): ");
+			hours = con.nextDouble();
+		
+			switch(vehicleType) {
+			case 'c': 
+				total = carRate * hours;
+				System.out.print("\nTotal parking charge: " + total);
+				break;
+		
+			case 'b':
+				total = busRate * hours;
+				System.out.print("\nTotal parking charge: " + total);
+				break;
+		
+			case 't':
+				total = truckRate * hours;
+				System.out.print("\nTotal parking charge: " + total);
+				break;
+		
+			default:
+				System.out.print("Invalid input! Please enter the vehicle type!");
+				break;
+			}
+       }
+}
